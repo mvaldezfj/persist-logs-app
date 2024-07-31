@@ -3,7 +3,7 @@
 client_id = "e6feb59217f8b2bb1b8e2ead7e79bc58"
 name = "persist-logs-app"
 handle = "persist-logs-app"
-application_url = "https://comfortable-fm-dh-fourth.trycloudflare.com"
+application_url = "https://mug-refinance-deadly-applicable.trycloudflare.com"
 embedded = true
 
 [build]
@@ -17,9 +17,9 @@ scopes = "write_products"
 
 [auth]
 redirect_urls = [
-  "https://comfortable-fm-dh-fourth.trycloudflare.com/auth/callback",
-  "https://comfortable-fm-dh-fourth.trycloudflare.com/auth/shopify/callback",
-  "https://comfortable-fm-dh-fourth.trycloudflare.com/api/auth/callback"
+  "https://mug-refinance-deadly-applicable.trycloudflare.com/auth/callback",
+  "https://mug-refinance-deadly-applicable.trycloudflare.com/auth/shopify/callback",
+  "https://mug-refinance-deadly-applicable.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]
