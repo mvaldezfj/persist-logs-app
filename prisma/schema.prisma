@@ -1,0 +1,55 @@
+// schema.prisma
+datasource db {
+  provider = "sqlite"
+  url      = "file:dev.sqlite"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Event {
+  id            Int      @id @default(autoincrement())
+  userId        String
+  user          User     @relation(fields: [userId], references: [id])
+  arguments     String
+  body          String?
+  createdAt     DateTime @map("created_at")
+  description   String
+  eventId       BigInt   @unique @map("event_id")
+  message       String
+  path          String
+  subjectId     BigInt   @map("subject_id")
+  subjectType   String   @map("subject_type")
+  verb          String
+  author        String
+
+  @@map("events")
+}
+
+model User {
+  id      String     @id @default(uuid())
+  email   String  @unique
+  name    String?
+  initialMigration   Boolean  @default(false) 
+
+  events  Event[]
+}
+
+model Session {
+  id            String    @id
+  shop          String
+  state         String
+  isOnline      Boolean   @default(false)
+  scope         String?
+  expires       DateTime?
+  accessToken   String
+  userId        BigInt?
+  firstName     String?
+  lastName      String?
+  email         String?
+  accountOwner  Boolean   @default(false)
+  locale        String?
+  collaborator  Boolean?  @default(false)
+  emailVerified Boolean?  @default(false)
+}

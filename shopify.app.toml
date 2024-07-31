@@ -1,0 +1,33 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "e6feb59217f8b2bb1b8e2ead7e79bc58"
+name = "persist-logs-app"
+handle = "persist-logs-app"
+application_url = "https://comfortable-fm-dh-fourth.trycloudflare.com"
+embedded = true
+
+[build]
+automatically_update_urls_on_dev = true
+dev_store_url = "quickstart-75a712f6.myshopify.com"
+include_config_on_deploy = true
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "write_products"
+
+[auth]
+redirect_urls = [
+  "https://comfortable-fm-dh-fourth.trycloudflare.com/auth/callback",
+  "https://comfortable-fm-dh-fourth.trycloudflare.com/auth/shopify/callback",
+  "https://comfortable-fm-dh-fourth.trycloudflare.com/api/auth/callback"
+]
+
+[webhooks]
+api_version = "2024-07"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/uninstalled" ]
+  uri = "/webhooks"
+
+[pos]
+embedded = false
